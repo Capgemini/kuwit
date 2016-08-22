@@ -1,0 +1,73 @@
+@import '../../styles/global';
+
+.header__container {
+  max-width: 88em;
+  margin: 0 auto 1em;
+  // background-color: $grey-black;
+}
+
+.site-header {
+  width: 100%;
+  z-index: 1;
+  color: $black;
+  padding: 1em 1.5em 3em;
+  font-size: 14px;
+
+  .header-left-container {
+    float: left;
+    text-transform: uppercase;
+    margin-top: 0.2em;
+
+    .header-seperator {
+      margin: 0 1em;
+    }
+  }
+
+  .header-right-container {
+    position: relative;
+    top: -0.1em;
+    float: right;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .header-home {
+      display: inline-block;
+      margin-right: 2.5em;
+      color: $black;
+    }
+
+    .header-menu {
+      width: 2em;
+      cursor: pointer;
+    }
+
+    img:not(:last-child) {
+      margin-right: 2em;
+    }
+  }
+}
+
+.site-header {
+  .numberErrors {
+    // background-color: $green-dark;
+    font-family: LR-bold;
+    color: $black;
+    font-size: 0.8em;
+    border-radius: 50%;
+    text-align: center;
+    width: 1.6em;
+    height: 1.6em;
+    position: absolute;
+    top: 0.9em;
+    right: 6.5em;
+    padding-top: 0.15em;
+  }
+}
+
+@media screen and (min-width: 1431px) {
+  .header__container {
+    margin: 0 4.5%;
+  }
+}

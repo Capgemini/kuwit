@@ -1,0 +1,61 @@
+@import '../../styles/global';
+
+.chat-box {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 25px;
+  color: white;
+}
+
+.user.chat-box {
+  float: left;
+  background: $pacific-blue;
+}
+
+.bot.chat-box {
+  float: right;
+  background: $red;
+}
+
+.quickReplies.chat-box {
+  float: right;
+  color: #aaa;
+}
+
+.reply {
+  cursor: pointer;
+}
+
+.clearBoth {
+  clear: both;
+}
+
+.botTextArea {
+  max-height: 350px;
+  overflow: auto;
+  font-size: 100%;
+}
+
+.inputs {
+  margin: 20px 0;
+}
+
+.resizable {
+  background: #e0e0e0;
+  color: #333;
+  padding: 10px;
+  border-radius: 0 25px 25px;
+  overflow: auto; /* fix for Safari */
+}
+
+.react-draggable {
+  padding: 10px;
+}
+
+.show {
+  visibility: visible;
+}
+
+.hide {
+  visibility: hidden;
+}

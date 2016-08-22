@@ -1,0 +1,18 @@
+@import '../../styles/global';
+
+.welcomeBox {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 25px;
+  width: 50%;
+  float: left;
+}
+
+.fake-chat-box {
+  padding: 5px;
+  margin: 10px;
+  border-radius: 25px;
+  color: white;
+  background: $pacific-blue;
+  cursor: pointer;
+}

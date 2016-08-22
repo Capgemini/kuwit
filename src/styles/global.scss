@@ -1,0 +1,62 @@
+//primary colour palette
+$thunder: #564c53;
+$plum: #8b3171;
+$lola: #d5d0d4;
+$white: #ffffff;
+$black: #333;
+$eggplant: #61394f;
+$outer-space: #353a3c;
+
+//secondary colour palette
+$java: #17bbb2;
+$pacific-blue: #00a6cc;
+$red: #ff9999;
+
+//shades of grey
+//a selection of grayscale colors for background or text color use.
+
+$thunder: #564c53;
+$suva-gray: #90868d;
+$shady-lady: #bbb2bb;
+$lola: #d5d0d4;
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: $white;
+  color: $black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+label {
+  font-family: 'Lato', sans-serif;
+}
+
+.thumbnail {
+  border-radius: 50%;
+}
+
+.status-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1.5em;
+  background: $white;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+

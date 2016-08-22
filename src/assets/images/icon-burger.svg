@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="49px" height="38px" viewBox="0 0 49 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Burger</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="STA---Prod-Dev-Engineers" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="03" sketch:type="MSArtboardGroup" transform="translate(-668.000000, -62.000000)" fill="#FFFFFF">
+            <g id="Navigation-w/-Menu" sketch:type="MSLayerGroup">
+                <g id="Burger" transform="translate(668.000000, 62.000000)" sketch:type="MSShapeGroup">
+                    <path d="M0,21.1668722 L48.45,21.1668722 L48.45,15 L0,15 L0,21.1668722 Z" id="Fill-1"></path>
+                    <path d="M0,6.16666667 L48.45,6.16666667 L48.45,0 L0,0 L0,6.16666667 Z" id="Fill-2"></path>
+                    <path d="M0,37.1666667 L48.45,37.1666667 L48.45,31 L0,31 L0,37.1666667 Z" id="Fill-3"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

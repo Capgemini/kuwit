@@ -1,0 +1,189 @@
+#!/bin/bash
+
+set -e
+
+createComponent() {
+  FILENAME="$1"
+  FILENAME=`echo ${FILENAME:0:1} | tr  '[a-z]' '[A-Z]'`${FILENAME:1}
+
+  cat > "$FILENAME".js <<EOF
+import React, { Component, PropTypes } from 'react';
+
+class $FILENAME extends Component {
+  render() {
+    return (
+      <div> content </div>
+    );
+  }
+}
+
+$FILENAME.propTypes = {
+
+};
+
+export default "$FILENAME";
+EOF
+  return 0
+}
+
+createCSSComponent() {
+  FILENAME="$1"
+  FILENAME=`echo ${FILENAME:0:1} | tr  '[a-z]' '[A-Z]'`${FILENAME:1}
+
+  cat > "$FILENAME".js <<EOF
+import React, { Component, PropTypes } from 'react';
+import styles from './$FILENAME.scss';
+
+@cssModules(styles)
+class $FILENAME extends Component {
+  render() {
+    return (
+      <div> content </div>
+    );
+  }
+}
+
+$FILENAME.propTypes = {
+
+};
+
+export default "$FILENAME";
+EOF
+
+  echo '' > $FILENAME.scss
+  return 0
+}
+
+
+createContainer() {
+  FILENAME="$1"
+  FILENAME=`echo ${FILENAME:0:1} | tr  '[a-z]' '[A-Z]'`${FILENAME:1}
+
+  cat > index.js <<EOF
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+
+@cssModules(styles)
+class $FILENAME extends Component {
+  render() {
+    return (
+      <div> content </div>
+    );
+  }
+}
+
+$FILENAME.propTypes = {
+
+};
+
+function mapStateToProps(state) {
+  return {
+
+  };
+}
+
+export default connect(mapStateToProps)($FILENAME);
+EOF
+
+  return 0
+}
+
+createFolderAndMove() {
+  FILENAME="$1"
+  FILENAME=`echo ${FILENAME:0:1} | tr  '[a-z]' '[A-Z]'`${FILENAME:1}
+  mkdir $FILENAME
+  mv $FILENAME.* $FILENAME
+}
+
+createFolderAndIndex() {
+  FILENAME="$1"
+  FILENAME=`echo ${FILENAME:0:1} | tr  '[a-z]' '[A-Z]'`${FILENAME:1}
+  mkdir $FILENAME
+  mv index.js $FILENAME
+}
+
+if [ "$1" = "new" ]; then
+  if [ "$2" = "" ]; then
+
+    echo '--- ELEMENT not specified'
+    echo '--- Usage: ./redux-cli new dumbcomponent'
+    exit 0
+  fi
+
+  TYPE="$2"
+
+  if [ "$TYPE" = "filecomponent" ]; then
+    if [ "$3" = "" ]; then
+
+      echo '--- NAME not specified'
+      echo '--- Usage: ./redux-cli new filecomponent "filename"'
+      exit 0
+    fi
+    FILENAME="$3"
+    createComponent $FILENAME
+
+    if [ "$4" = "folder" ]; then
+      createFolderAndMove $FILENAME
+    fi
+
+    exit 0
+  fi
+#--------------------------------------------------------------
+
+  if [ "$TYPE" = "filecomponentcss" ]; then
+    if [ "$3" = "" ]; then
+
+      echo '--- NAME not specified'
+      echo '--- Usage: ./redux-cli new filecomponentcss "filename"'
+      exit 0
+    fi
+    FILENAME="$3"
+    createCSSComponent $FILENAME
+
+    if [ "$4" = "folder" ]; then
+      createFolderAndMove $3
+    fi
+
+    exit 0
+
+  fi
+
+  if [ "$TYPE" = "container" ]; then
+    if [ "$3" = "" ]; then
+
+      echo '--- NAME not specified'
+      echo '--- Usage: ./redux-cli new filecomponentcss "filename"'
+      exit 0
+    fi
+    FILENAME="$3"
+
+    createContainer $FILENAME
+
+    createFolderAndIndex $3
+
+
+    exit 0
+
+  fi
+
+
+#--------------------------------
+fi
+
+
+
+if [ "$1" = "" ]; then
+  echo "==========================================================================="
+  echo 'Redux cli commands:'
+  echo ""
+  echo "Create file component"
+  echo "Usage: ./redux-cli new filecomponent <filename>"
+  echo "Create file component in folder"
+  echo "Usage: ./redux-cli new filecomponent <filename> folder"
+  echo "Create file component with css"
+  echo "Usage: ./redux-cli new filecomponentcss <filename>"
+  echo "Create file component with css and folder"
+  echo "Usage: ./redux-cli new filecomponentcss <filename> folder"
+  echo "Create a container"
+  echo "Usage: ./redux-cli new container <foldername>"
+fi
