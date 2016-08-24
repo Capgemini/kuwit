@@ -29,3 +29,6 @@ You can check it out and use it as a service on [KuWit](http://kuwit.io) or just
 
 * At the moment KuWit runs in a single Docker container. We should be able to provide a PoC providing a serverless solution in a [s3](https://aws.amazon.com/es/s3/) + [lambda](https://aws.amazon.com/documentation/lambda/) style.
 
+# Blog
+
+https://capgemini.github.io/bots/kuwit/
