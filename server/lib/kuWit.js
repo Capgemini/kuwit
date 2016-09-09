@@ -55,6 +55,8 @@ const kuWitActions = {
 
       delete context.wrongResource;
       delete context.result;
+      delete context.missingHost
+      delete context.missingToken
 
       let resources = ['pods', 'namespaces', 'nodes', 'services', 'replicationControllers'];
       let resource = firstEntityValue(entities, 'resource');
