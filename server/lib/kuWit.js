@@ -58,7 +58,7 @@ const kuWitActions = {
 
       let resources = ['pods', 'namespaces', 'nodes', 'services', 'replicationControllers'];
       let resource = firstEntityValue(entities, 'resource');
-      let host = firstEntityValue(entities, 'url') || context.host;
+      let host = firstEntityValue(entities, 'host') || context.host;
       let token = firstEntityValue(entities, 'token') || context.token;
 
       if (!host) {
