@@ -4,7 +4,7 @@
 
 [KuWit.io](http://kuwit.io), the AI bot who knows everything about Kubernetes.
 
-He's built on the shoulders of wit.ai and is becoming smarter every day by training and using Natural Language Processing.
+He's built on the shoulders of https://wit.ai/ and is becoming smarter every day by training and using Natural Language Processing.
 
 KuWit relies on Wit for making predictions and extracting entities from natural language and then executes actions and retrieve information from external APIs in order to finally deliver a meaningful user output.
 
